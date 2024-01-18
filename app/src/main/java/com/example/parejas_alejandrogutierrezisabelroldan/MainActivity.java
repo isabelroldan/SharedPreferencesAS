@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         guardarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String valor1 = editText1.getText().toString();
+                String valor1 = editText1.getText().toString().trim();  // Eliminar espacios
                 String valor2 = editText2.getText().toString();
                 String valor3 = editText3.getText().toString();
 
@@ -59,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
                 // Obtener la lista actual de tríos almacenados
                 Set<String> listaTrios = sharedPreferences.getStringSet("clave_trios", new HashSet<String>());
 
-                // Verificar si el trío ya existe
-                if (listaTrios.contains(trio)) {
+                // Verificar si el primer valor ya existe
+                if (contienePrimerValor(listaTrios, valor1)) {
                     // Mostrar AlertDialog para confirmar la actualización
-                    mostrarDialogoActualizar(trio);
+                    mostrarDialogoActualizar(trio, valor1);
                 } else {
                     // Agregar el nuevo trío a la lista
                     listaTrios.add(trio);
@@ -131,35 +131,32 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Método para mostrar el diálogo de actualización
-    private void mostrarDialogoActualizar(final String trioExistente) {
+    // Método para verificar si el primer valor está contenido en el conjunto de tríos
+    private boolean contienePrimerValor(Set<String> listaTrios, String primerValor) {
+        for (String existente : listaTrios) {
+            String[] valores = existente.split(",");
+            if (valores.length > 0 && valores[0].trim().equals(primerValor)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void mostrarDialogoActualizar(final String trioExistente, String valor) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Confirmar actualización");
         builder.setMessage("El trío ya existe. ¿Desea actualizarlo?");
         builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                // Actualizar el trío existente
-                Set<String> listaTrios = sharedPreferences.getStringSet("clave_trios", new HashSet<String>());
-                listaTrios.remove(trioExistente);  // Eliminar el trío existente
-                String valor1 = editText1.getText().toString();
+                // Obtener valores actualizados del nuevo trío dentro del onClick
+                String valor1 = editText1.getText().toString().trim();
                 String valor2 = editText2.getText().toString();
                 String valor3 = editText3.getText().toString();
                 String nuevoTrio = valor1 + "," + valor2 + "," + valor3;
-                listaTrios.add(nuevoTrio);  // Agregar el trío actualizado
 
-                // Guardar la lista actualizada en SharedPreferences
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putStringSet("clave_trios", listaTrios);
-                editor.apply();
-
-                // Limpiar campos de texto
-                editText1.setText("");
-                editText2.setText("");
-                editText3.setText("");
-
-                // Mostrar mensaje de éxito
-                Toast.makeText(MainActivity.this, "Se ha actualizado con éxito", Toast.LENGTH_SHORT).show();
+                // Llamar a la función para realizar la actualización
+                actualizarTrio(trioExistente, nuevoTrio, valor);
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -169,6 +166,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         builder.show();
+    }
+
+    // Nueva función para realizar la actualización
+    private void actualizarTrio(String valorAActualizar, String nuevoTrio, String valor) {
+        // Obtener la lista actual de tríos almacenados
+        Set<String> listaTrios = sharedPreferences.getStringSet("clave_trios", new HashSet<String>());
+
+        // Crear una nueva lista para almacenar los tríos actualizados
+        Set<String> nuevaListaTrios = new HashSet<>();
+
+        // Iterar sobre la lista existente y actualizar el trío si es necesario
+        for (String trio : listaTrios) {
+            if (trio.contains(valorAActualizar)) {
+                // Reemplazar el trío antiguo con el nuevo
+                nuevaListaTrios.add(nuevoTrio);
+            } else {
+                // Conservar los tríos que no necesitan actualización
+                nuevaListaTrios.add(trio);
+            }
+        }
+
+        // Actualizar directamente la lista existente con los tríos actualizados
+        listaTrios.clear();
+        listaTrios.addAll(nuevaListaTrios);
+
+        // Guardar la lista actualizada en SharedPreferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putStringSet("clave_trios", listaTrios);
+        editor.commit();
+
+        // Limpiar campos de texto
+        editText1.setText("");
+        editText2.setText("");
+        editText3.setText("");
+
+        // Mostrar mensaje de éxito
+        Toast.makeText(MainActivity.this, "Se ha actualizado con éxito", Toast.LENGTH_SHORT).show();
     }
 
     private void mostrarTriosEnEditText(Set<String> listaTrios) {
