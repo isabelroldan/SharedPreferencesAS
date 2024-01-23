@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         editText1 = findViewById(R.id.editTextText2);
         editText2 = findViewById(R.id.editTextText3);
         editText3 = findViewById(R.id.editTextText4);
-        textView = findViewById(R.id.textView);
+        textView = findViewById(R.id.textVal1);
         mostrarTodosEditText = findViewById(R.id.MostrarTodos);
 
         sharedPreferences = getSharedPreferences("MiArchivo", Context.MODE_PRIVATE);

@@ -3,4 +3,13 @@
     <string name="title">
         SHARED PREFERENCES
     </string>
+    <string name="textVal1">
+        Introduce el primer valor
+    </string>
+    <string name="textVal2">
+        Introduce el segundo valor
+    </string>
+    <string name="textVal3">
+        Introduce el tercer valor
+    </string>
 </resources>
