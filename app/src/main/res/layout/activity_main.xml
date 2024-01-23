@@ -58,7 +58,7 @@
         <LinearLayout
             android:id="@+id/inputs"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="320dp"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="116dp"
             android:layout_marginRight="27dp"
@@ -74,11 +74,51 @@
             <EditText
                 android:id="@+id/InputVal1"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="32dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="11dp"
                 android:layout_marginBottom="14dp"
+                android:background="@drawable/inputtext"
                 android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="text"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/textVal2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/InputVal2"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/inputtext"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="text"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/textVal3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/InputVal3"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/inputtext"
+                android:ems="10"
+                android:gravity="center_horizontal"
                 android:inputType="text"
                 android:text="Name" />
 
