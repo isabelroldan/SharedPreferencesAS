@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("MiArchivo", Context.MODE_PRIVATE);
 
-        Button guardarButton = findViewById(R.id.button);
-        Button buscarButton = findViewById(R.id.button2);
-        Button mostrarTodosButton = findViewById(R.id.button3);
-        Button borrarButton = findViewById(R.id.button4);
+        Button guardarButton = findViewById(R.id.buttonSave);
+        Button buscarButton = findViewById(R.id.buttonLookFor);
+        Button mostrarTodosButton = findViewById(R.id.buttonDelete);
+        Button borrarButton = findViewById(R.id.btnShowAll);
 
         guardarButton.setOnClickListener(new View.OnClickListener() {
             @Override

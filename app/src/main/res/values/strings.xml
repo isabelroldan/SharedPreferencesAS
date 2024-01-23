@@ -12,4 +12,31 @@
     <string name="textVal3">
         Introduce el tercer valor
     </string>
+    <string name="names">
+        Alejandro Gutierrez e Isabel Roldan
+    </string>
+    <string name="btnSave">
+        Guardar
+    </string>
+    <string name="btnLookFor">
+        Buscar
+    </string>
+    <string name="btnDelete">
+        Borrar
+    </string>
+    <string name="btnAll">
+        Mostrar todos
+    </string>
+    <string name="btnClean">
+        Limpiar
+    </string>
+    <string name="hintVal1">
+        Valor 1
+    </string>
+    <string name="hintVal2">
+        Valor 2
+    </string>
+    <string name="hintVal3">
+        Valor 3
+    </string>
 </resources>

@@ -22,13 +22,14 @@
             android:layout_width="225dp"
             android:layout_height="83dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="14dp"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="14dp"
             android:layout_marginTop="8dp"
-            android:text="@string/title"
-            android:textAppearance="@style/shared_pref"
             android:gravity="top"
-            />
+            android:text="@string/title"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -58,10 +59,10 @@
         <LinearLayout
             android:id="@+id/inputs"
             android:layout_width="match_parent"
-            android:layout_height="320dp"
+            android:layout_height="713dp"
             android:layout_marginLeft="14dp"
             android:layout_marginTop="116dp"
-            android:layout_marginRight="27dp"
+            android:layout_marginRight="7dp"
             android:layout_marginBottom="504dp"
             android:orientation="vertical">
 
@@ -69,26 +70,11 @@
                 android:id="@+id/textVal1"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="TextView" />
-
-            <EditText
-                android:id="@+id/InputVal1"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:layout_marginLeft="13dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginBottom="14dp"
-                android:background="@drawable/inputtext"
-                android:ems="10"
-                android:gravity="center_horizontal"
-                android:inputType="text"
-                android:text="Name" />
-
-            <TextView
-                android:id="@+id/textVal2"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="TextView" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="top"
+                android:text="@string/textVal1"
+                android:textAppearance="@style/common" />
 
             <EditText
                 android:id="@+id/InputVal2"
@@ -96,18 +82,23 @@
                 android:layout_height="32dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="11dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="14dp"
                 android:background="@drawable/inputtext"
                 android:ems="10"
-                android:gravity="center_horizontal"
-                android:inputType="text"
-                android:text="Name" />
+                android:gravity="center|center_horizontal"
+                android:hint="Valor 1"
+                android:inputType="text" />
 
             <TextView
-                android:id="@+id/textVal3"
+                android:id="@+id/textVal2"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:text="TextView" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="top"
+                android:text="@string/textVal2"
+                android:textAppearance="@style/common" />
 
             <EditText
                 android:id="@+id/InputVal3"
@@ -115,12 +106,137 @@
                 android:layout_height="32dp"
                 android:layout_marginLeft="13dp"
                 android:layout_marginTop="11dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="14dp"
                 android:background="@drawable/inputtext"
                 android:ems="10"
-                android:gravity="center_horizontal"
-                android:inputType="text"
-                android:text="Name" />
+                android:gravity="center|center_horizontal"
+                android:hint="Valor 2"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/textVal3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="top"
+                android:text="@string/textVal3"
+                android:textAppearance="@style/common" />
+
+            <EditText
+                android:id="@+id/InputVal1"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/inputtext"
+                android:ems="10"
+                android:gravity="center|center_horizontal"
+                android:hint="Valor 3"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:id="@+id/buttons"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="7dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="37dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/btnSave"
+                    app:cornerRadius="7dp"
+                    app:strokeColor="#8CB2F8"
+                    app:strokeWidth="2dp" />
+
+                <Button
+                    android:id="@+id/buttonLookFor"
+                    android:layout_width="100dp"
+                    android:layout_height="37dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/btnLookFor"
+                    app:cornerRadius="7dp"
+                    app:strokeColor="#8CB2F8"
+                    app:strokeWidth="2dp" />
+
+                <Button
+                    android:id="@+id/buttonDelete"
+                    android:layout_width="100dp"
+                    android:layout_height="37dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:gravity="center|center_horizontal"
+                    android:text="@string/btnDelete"
+                    app:cornerRadius="7dp"
+                    app:strokeColor="#8CB2F8"
+                    app:strokeWidth="2dp" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextShowAll"
+                android:layout_width="330dp"
+                android:layout_height="306dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/text"
+                android:gravity="center|center_horizontal" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="13dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnShowAll"
+                    android:layout_width="194dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:gravity="center_horizontal"
+                    android:text="@string/btnAll"
+                    app:cornerRadius="7dp"
+                    app:strokeColor="#8CB2F8"
+                    app:strokeWidth="2dp" />
+
+                <Button
+                    android:id="@+id/btnClean"
+                    android:layout_width="112dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#000000"
+                    android:gravity="center_horizontal"
+                    android:text="@string/btnClean"
+                    app:cornerRadius="7dp"
+                    app:strokeColor="#8CB2F8"
+                    app:strokeWidth="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/names"
+                android:layout_width="wrap_content"
+                android:layout_height="11dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/names"
+                android:textSize="10sp" />
 
         </LinearLayout>
     </LinearLayout>
