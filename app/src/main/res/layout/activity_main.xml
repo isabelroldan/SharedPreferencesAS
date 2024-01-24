@@ -48,20 +48,21 @@
     <LinearLayout
         android:id="@+id/body"
         android:layout_width="377dp"
-        android:layout_height="830dp"
+        android:layout_height="740dp"
+        android:background="@drawable/body"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="vertical"
+        android:verticalScrollbarPosition="right"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/body">
+        app:layout_constraintTop_toBottomOf="@+id/banner">
 
         <LinearLayout
             android:id="@+id/inputs"
             android:layout_width="match_parent"
             android:layout_height="713dp"
             android:layout_marginLeft="14dp"
-            android:layout_marginTop="116dp"
+            android:layout_marginTop="28dp"
             android:layout_marginRight="7dp"
             android:layout_marginBottom="504dp"
             android:orientation="vertical">
@@ -72,12 +73,13 @@
                 android:layout_height="20dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+
                 android:gravity="top"
                 android:text="@string/textVal1"
                 android:textAppearance="@style/common" />
 
             <EditText
-                android:id="@+id/InputVal2"
+                android:id="@+id/RowVal2"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:layout_marginLeft="13dp"
@@ -101,7 +103,7 @@
                 android:textAppearance="@style/common" />
 
             <EditText
-                android:id="@+id/InputVal3"
+                android:id="@+id/RowVal3"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:layout_marginLeft="13dp"
