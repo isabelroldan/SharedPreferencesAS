@@ -18,4 +18,10 @@
     <string name="borrar">Borrar</string>
     <string name="limpiar">Limpiar</string>
 
+    <string name="title">
+        SHARED PREFERENCES
+    </string>
+    <string name="names">
+        Alejandro Gutierrez e Isabel Roldan
+    </string>
 </resources>

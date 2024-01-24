@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="96dp"
+        android:layout_height="0dp"
+        android:background="#080705"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="77dp"
+            android:layout_height="81dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
+            android:src="@drawable/LogoLightPNG" />
+
+        <ImageView
+            android:id="@+id/TitleHorizontal"
+            android:layout_width="83dp"
+            android:layout_height="225dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="63dp"
+            android:layout_marginBottom="13dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/Title" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="0dp"
+        android:layout_height="381dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/landbody"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/banner"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="363dp"
+            android:layout_height="346dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+
+            <TableRow
+                android:id="@+id/RowVal1"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/LayoutRowVal1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="@string/textVal1"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/editTextText4"
+                        android:layout_width="323dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:background="@drawable/inputtext"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="Valor 1"
+                        android:inputType="text" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/editTextText2"
+                android:layout_width="match_parent"
+                android:layout_height="63dp">
+
+                <LinearLayout
+                    android:id="@+id/LayoutRowVal2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="@string/textVal2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/InputVal2"
+                        android:layout_width="323dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:background="@drawable/inputtext"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="Valor 2"
+                        android:inputType="text" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/editTextText3"
+                android:layout_width="match_parent"
+                android:layout_height="63dp">
+
+                <LinearLayout
+                    android:id="@+id/LayoutRowVal3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="@string/textVal3"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/InputVal3"
+                        android:layout_width="323dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="11dp"
+                        android:background="@drawable/inputtext"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="Valor 3"
+                        android:inputType="text" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ButtonsRow1"
+                android:layout_width="363dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="35dp">
+
+                <LinearLayout
+                    android:id="@+id/buttons"
+                    android:layout_width="363dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="37dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#000000"
+                        android:text="@string/btnSave"
+                        app:cornerRadius="7dp"
+                        app:strokeColor="#8CB2F8"
+                        app:strokeWidth="2dp" />
+
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="100dp"
+                        android:layout_height="37dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#000000"
+                        android:text="@string/btnLookFor"
+                        app:cornerRadius="7dp"
+                        app:strokeColor="#8CB2F8"
+                        app:strokeWidth="2dp" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="100dp"
+                        android:layout_height="37dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#000000"
+                        android:text="@string/btnDelete"
+                        app:cornerRadius="7dp"
+                        app:strokeColor="#8CB2F8"
+                        app:strokeWidth="2dp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ButtonsRow2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="194dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#000000"
+                        android:gravity="center_horizontal"
+                        android:text="@string/btnAll"
+                        app:cornerRadius="7dp"
+                        app:strokeColor="#8CB2F8"
+                        app:strokeWidth="2dp" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="112dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#000000"
+                        android:gravity="center_horizontal"
+                        android:text="@string/btnClean"
+                        app:cornerRadius="7dp"
+                        app:strokeColor="#8CB2F8"
+                        app:strokeWidth="2dp" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutDisplayAll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="14dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextShowAll3"
+                android:layout_width="match_parent"
+                android:layout_height="306dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:background="@drawable/text"
+                android:gravity="center|center_horizontal" />
+
+            <TextView
+                android:id="@+id/namesLand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:textSize="13sp"
+                android:text="@string/names" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
