@@ -79,7 +79,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:text="@string/textVal1"
-                        android:textAppearance="@style/common" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/InputVal1"
@@ -99,7 +99,7 @@
             <TableRow
                 android:id="@+id/RowVal2"
                 android:layout_width="match_parent"
-                android:layout_height="63dp" >
+                android:layout_height="63dp">
 
                 <LinearLayout
                     android:id="@+id/LayoutRowVal2"
@@ -112,7 +112,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:text="@string/textVal2"
-                        android:textAppearance="@style/common" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/InputVal2"
@@ -132,7 +132,7 @@
             <TableRow
                 android:id="@+id/RowVal3"
                 android:layout_width="match_parent"
-                android:layout_height="63dp" >
+                android:layout_height="63dp">
 
                 <LinearLayout
                     android:id="@+id/LayoutRowVal3"
@@ -145,7 +145,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
                         android:text="@string/textVal3"
-                        android:textAppearance="@style/common" />
+                        android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/InputVal3"
@@ -165,12 +165,13 @@
             <TableRow
                 android:id="@+id/ButtonsRow1"
                 android:layout_width="363dp"
-                android:layout_height="37dp"
+                android:layout_height="45dp"
                 android:layout_marginTop="35dp">
 
                 <LinearLayout
                     android:id="@+id/buttons"
                     android:layout_width="363dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <Button
@@ -210,18 +211,16 @@
                 </LinearLayout>
             </TableRow>
 
-            />
-
             <TableRow
                 android:id="@+id/ButtonsRow2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginBottom="13dp"
+
                     android:orientation="horizontal">
 
                     <Button
@@ -251,6 +250,38 @@
                 </LinearLayout>
             </TableRow>
         </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutDisplayAll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="14dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextShowAll3"
+                android:layout_width="match_parent"
+                android:layout_height="306dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:background="@drawable/text"
+                android:gravity="center|center_horizontal" />
+
+            <TextView
+                android:id="@+id/namesLand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:textSize="13sp"
+                android:text="@string/names" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
