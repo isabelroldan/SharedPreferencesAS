@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         editText3 = findViewById(R.id.editTextText4);
         textView = findViewById(R.id.textView);
         mostrarTodosEditText = findViewById(R.id.MostrarTodos);
+        Button limpiarButton = findViewById(R.id.button5);
 
         sharedPreferences = getSharedPreferences("MiArchivo", Context.MODE_PRIVATE);
 
@@ -129,6 +130,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        limpiarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Limpiar los campos de texto
+                editText1.setText("");
+                editText2.setText("");
+                editText3.setText("");
+                mostrarTodosEditText.setText("");
+            }
+        });
     }
 
     // Método para verificar si el primer valor está contenido en el conjunto de tríos
@@ -178,23 +190,29 @@ public class MainActivity extends AppCompatActivity {
 
         // Iterar sobre la lista existente y actualizar el trío si es necesario
         for (String trio : listaTrios) {
-            if (trio.contains(valorAActualizar)) {
+            if (!trio.trim().equalsIgnoreCase(valorAActualizar.trim())) {
                 // Reemplazar el trío antiguo con el nuevo
                 nuevaListaTrios.add(nuevoTrio);
             } else {
                 // Conservar los tríos que no necesitan actualización
                 nuevaListaTrios.add(trio);
             }
+            if (trio.trim().split(",")[0].equalsIgnoreCase(valor.trim())) {
+                listaTrios.remove(trio);
+            }
+
         }
 
+
+
         // Actualizar directamente la lista existente con los tríos actualizados
-        listaTrios.clear();
+        //listaTrios.clear();
         listaTrios.addAll(nuevaListaTrios);
 
         // Guardar la lista actualizada en SharedPreferences
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putStringSet("clave_trios", listaTrios);
-        editor.commit();
+        editor.apply(); // Utiliza apply en lugar de commit para aplicar asincrónicamente los cambios
 
         // Limpiar campos de texto
         editText1.setText("");
@@ -204,6 +222,8 @@ public class MainActivity extends AppCompatActivity {
         // Mostrar mensaje de éxito
         Toast.makeText(MainActivity.this, "Se ha actualizado con éxito", Toast.LENGTH_SHORT).show();
     }
+
+
 
     private void mostrarTriosEnEditText(Set<String> listaTrios) {
         // Mostrar los primeros resultados en los EditText
@@ -219,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
             editText1.setText("");
             editText2.setText("");
             editText3.setText("");
+            Toast.makeText(MainActivity.this, "El valor no ha sido encontrado", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -247,6 +268,8 @@ public class MainActivity extends AppCompatActivity {
                 for (String trio : listaTrios) {
                     if (!trio.contains(valorABorrar)) {
                         nuevaListaTrios.add(trio);
+                    }else{
+                        Toast.makeText(MainActivity.this, "El valor no ha sido encontrado", Toast.LENGTH_SHORT).show();
                     }
                 }
 
