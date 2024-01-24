@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Parejas_AlejandroGutierrezIsabelRoldan</string>
+
+    <!-- Textos para la interfaz de usuario -->
+    <string name="introduce_animal">Introduce el valor 1:</string>
+    <string name="introduce_tipo_animal">Introduce el valor 2:</string>
+    <string name="introduce_alimentacion">Introduce el valor 3:</string>
+
+    <!-- Hints para los EditText -->
+    <string name="hint_animal">Valor 1</string>
+    <string name="hint_domestico_salvaje">Valor 2</string>
+    <string name="hint_alimentacion">Valor 3</string>
+
+    <!-- Textos para los botones -->
+    <string name="guardar">Guardar</string>
+    <string name="buscar">Buscar</string>
+    <string name="mostrar_todos">Mostrar todos</string>
+    <string name="borrar">Borrar</string>
+    <string name="limpiar">Limpiar</string>
+
 </resources>

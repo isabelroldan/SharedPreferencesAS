@@ -4,6 +4,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import android.content.Context;
@@ -11,7 +13,9 @@ import android.content.SharedPreferences;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +23,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 
@@ -47,6 +52,18 @@ public class MainActivity extends AppCompatActivity {
         Button mostrarTodosButton = findViewById(R.id.button3);
         Button borrarButton = findViewById(R.id.button4);
 
+        /*Switch switchIdioma = findViewById(R.id.switch1);
+
+        switchIdioma.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked) {
+                    cambiarIdioma("es"); // Cambiar a español
+                } else {
+                    cambiarIdioma("en"); // Cambiar a inglés (o tu idioma por defecto)
+                }
+            }
+        });*/
         guardarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -295,4 +312,27 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
+
+    /*private void cambiarIdioma(String idiomaCodigo) {
+        String idiomaActual = sharedPreferences.getString("idioma", "es"); // Asume "es" como idioma por defecto
+
+        if (!idiomaActual.equals(idiomaCodigo)) {
+            Locale locale = new Locale(idiomaCodigo);
+            Locale.setDefault(locale);
+
+            Resources resources = getResources();
+            Configuration config = resources.getConfiguration();
+            config.setLocale(locale);
+            resources.updateConfiguration(config, resources.getDisplayMetrics());
+
+            // Guardar el idioma seleccionado en las preferencias compartidas
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("idioma", idiomaCodigo);
+            editor.apply();
+
+            // Reiniciar la actividad para aplicar el cambio de idioma
+            recreate();
+        }
+    }*/
+
 }
